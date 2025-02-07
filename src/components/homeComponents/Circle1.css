@@ -1,0 +1,12 @@
+.circle1 {
+  width: 777.01px;
+  height: 507.79px;
+  position: absolute;
+  top: -318.25px;
+  left: 454px;
+  background: radial-gradient(circle, #12E6C8 0%, rgba(0, 255, 0, 0) 100%);
+  border-radius: 50%;
+  filter: blur(240.53px);
+  opacity: 0.8;
+  transform: rotate(22.69deg);
+}
