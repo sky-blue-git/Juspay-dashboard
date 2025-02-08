@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, Typography, LinearProgress } from "@mui/material";
+import { LinearProgress } from "@mui/material";
 import WorldMap from "../../assets/world-map.svg";
 
 const data = [
@@ -18,13 +18,13 @@ const RevenueByLocation = () => {
         minWidth: "200px",
         maxWidth: "272px",
         height: "318px",
-        background: "#F7F9FB",
+        background: "var(--primary-light)",
         borderRadius: "12px",
         padding: "24px",
         textAlign: "left",
       }}
     >
-        <p style={{ fontSize: "14px", fontWeight: 600}}>
+        <p style={{ fontSize: "14px", fontWeight: 600, color:"var(--black100)"}}>
           Revenue by Location
         </p>
         <div style={{ marginBottom: "16px", marginTop: "16px" }}>
@@ -36,7 +36,7 @@ const RevenueByLocation = () => {
         </div>
         {data.map((item) => (
           <div key={item.city} style={{ display: "flex", flexDirection: "column", marginBottom: "16px" }}>
-            <div style={{display: "flex", flexDirection: "row", justifyContent:"space-between", fontSize: "12px"}}>
+            <div style={{display: "flex", flexDirection: "row", justifyContent:"space-between", fontSize: "12px",  color:"var(--black100)" }}>
               <p>{item.city}</p>
               <p>
                 {item.revenue}K

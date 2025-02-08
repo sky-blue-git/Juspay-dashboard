@@ -3,24 +3,32 @@
 :root {
   --bg-color: white;
   --black100: #1C1C1C;
+  --black40: #1C1C1C66; /* light text */
+  --black20: rgba(28, 28, 28, 0.2);
   --header-bg: #f8f9fa;
   --dark-opacity: rgba(28, 28, 28, 0.05);
-  --black10: rgba(28, 28, 28, 0.1);
-  --primary-light: #F7F9FB;
+  --black10: rgba(28, 28, 28, 0.1);            /* border */
+  --primary-light: #F7F9FB;                    /* secondary color */
   --primary-blue: #E3F5FF;
   --primary-purple: #E5ECF6;
+  --secondary-cyan: #A8C5DA;
+  --secondary-cyan2: #A8C5DA80;
 }
 
 /* Dark Mode */
 [data-theme="dark"] {
   --bg-color: #1C1C1C;
   --black100: #FFFFFF;
+  --black40: rgba(255, 255, 255, 0.4);
+  --black40: rgba(255, 255, 255, 0.2);
   --header-bg: #292b2c;
   --dark-opacity: rgba(255, 255, 255, 0.1);
   --black10: rgba(255, 255, 255, 0.1);
   --primary-light: rgba(255, 255, 255, 0.05);
   --primary-blue: #E3F5FF;
   --primary-purple: #E5ECF6;
+  --secondary-cyan: #A8C5DA;
+  --secondary-cyan2: #A8C5DA80;
 }
 
 .dashboard-container {
