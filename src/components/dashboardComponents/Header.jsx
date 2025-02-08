@@ -6,7 +6,6 @@ const Header = ({ toggleTheme }) => {
   return (
     <div className="header">
       <div className="toolbar">
-        {/* Left Side */}
         <div className="left">
           <button className="icon">
             <Dashboard fontSize="small" />
@@ -19,14 +18,12 @@ const Header = ({ toggleTheme }) => {
           <span>Default</span>
         </div>
 
-        {/* Search Box */}
-        <div className="search-box">
-          <Search className="search-icon" />
-          <input type="text" placeholder="Search" className="search-input" />
-        </div>
-
         {/* Right Side */}
         <div className="right">
+          <div className="search-box">
+            <Search className="search-icon" />
+            <input type="text" placeholder="Search" className="search-input" />
+          </div>
           <button className="icon" onClick={toggleTheme}>
             <WbSunny fontSize="small" />
           </button>

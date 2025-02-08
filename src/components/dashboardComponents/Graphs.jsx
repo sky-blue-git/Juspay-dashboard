@@ -5,10 +5,12 @@ import RevenueChart from './RevenueChart';
 import RevenueByLocation from './RevenuebyLocation';
 import TotalSales from './TotalSales';
 import TopSellingProducts from './TopSellingProducts';
+import OrderTable from '../OrderTable';
 
 const Graphs = () => {
   return (
     <div style = {{margin: "28px"}}>
+      <OrderTable/>
       <div style = {{display: "flex", flexDirection: "row", gap:"28px"}}>
         <Cards/>
         <ProjectionsVsActualsChart />
