@@ -3,9 +3,9 @@ import "./Card.css";
 import ArrowUp from "../../../assets/arrow-up.svg";
 import ArrowDown from "../../../assets/arrow-down.svg";
 
-const Card = ({ color, heading, number, percentage, growth }) => {
+const Card = ({ color, bgcolor, heading, number, percentage, growth }) => {
   return (
-    <div className="card" style={{ backgroundColor: color }}>
+    <div className="card" style={{ backgroundColor: bgcolor, color: color }}>
       <span className="card-heading">{heading}</span>
       <div className="card-content">
         <span className="card-number">{number}</span>

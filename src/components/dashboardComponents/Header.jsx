@@ -1,6 +1,6 @@
 import React from "react";
+import { Search, WbSunny, Notifications, ChatBubble, Dashboard, StarBorder } from "@mui/icons-material";
 import "./Header.css";
-import { Search, WbSunny, Notifications, ChatBubble, Dashboard } from "@mui/icons-material";
 
 const Header = ({ toggleTheme }) => {
   return (
@@ -11,10 +11,15 @@ const Header = ({ toggleTheme }) => {
           <button className="icon">
             <Dashboard fontSize="small" />
           </button>
-          <span className="breadcrumb">Dashboards / Default</span>
+          <button className="icon">
+            <StarBorder fontSize="small" />
+          </button>
+          <span>Dashboards</span>
+          <span>/</span>
+          <span>Default</span>
         </div>
 
-        {/* Center: Search Box */}
+        {/* Search Box */}
         <div className="search-box">
           <Search className="search-icon" />
           <input type="text" placeholder="Search" className="search-input" />
