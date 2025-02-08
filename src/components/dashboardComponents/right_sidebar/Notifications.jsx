@@ -36,8 +36,8 @@ const styles = {
     padding: '16px',
     width: '240px',
     height: '252px',
-    borderRadius: '8px',
-    boxSizing: 'border-box'
+    // borderRadius: '8px',
+    // boxSizing: 'border-box'
   },
   header: {
     width: '240px',
@@ -53,26 +53,30 @@ const styles = {
     flexDirection: 'column',
     gap: '8px'
   },
+  NotificationsText: {
+    fontFamily: 'Inter, sans-serif', // Apply Inter font to the "Contacts" text
+  },
   notificationItem: {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    borderRadius: '8px',
+    // borderRadius: '8px',
     padding: '4px',
-    width: '100%',
-    boxSizing: 'border-box'
+    width: '232px',
+    height:'46px',
+    // boxSizing: 'border-box'
   },
   notificationIcon: {
     width: '24px',
     height: '24px',
-    borderRadius: '4px',
+    // borderRadius: '4px',
     padding: '4px',
     backgroundColor: '#f7f7f7'
   },
   textContainer: {
     width: '192px',
     height: '38px',
-    borderRadius: '8px'
+    // borderRadius: '8px'
   },
   notificationText: {
     fontSize: '14px',

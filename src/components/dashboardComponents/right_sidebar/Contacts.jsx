@@ -13,18 +13,18 @@ const Frame = () => {
     { name: 'Orlando Diggs', image: image3 },
     { name: 'Andi Lane', image: image4 },
     { name: 'Kate Morrison', image: image5 },
-    { name: 'Koray Okumus', image: image6 }
+    { name: 'Koray Okumus', image: image6 },
   ];
 
   return (
     <div style={styles.frame}>
       <div style={styles.contactsBox}>
-        <span>Contacts</span>
+        <span style={styles.contactsText}>Contacts</span>
       </div>
       {contacts.map((contact, index) => (
         <div key={index} style={styles.contactBox}>
           <img src={contact.image} alt={contact.name} style={styles.contactImage} />
-          <span>{contact.name}</span>
+          <span style={styles.contactName}>{contact.name}</span>
         </div>
       ))}
     </div>
@@ -35,41 +35,38 @@ const styles = {
   frame: {
     width: '240px',
     height: '276px',
-    // display: 'flex',
-    // flexDirection: 'column',
     gap: '8px',
-    // backgroundColor: '#f0f0f0', // Optional: Add background color
-    padding: '8px',
-    // boxSizing: 'border-box',
+    // padding: '8px',
   },
   contactsBox: {
     width: '240px',
     height: '36px',
     borderRadius: '8px',
     padding: '8px 4px 8px 4px',
-    backgroundColor: '#ffffff', // Optional: Add background color
+    backgroundColor: '#ffffff',
     display: 'flex',
     alignItems: 'center',
     fontSize: '14px',
-    fontWeight: 'bold',
-    // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Optional: Add shadow
+  },
+  contactsText: {
+    fontFamily: 'Inter, sans-serif', // Apply Inter font to the "Contacts" text
   },
   contactBox: {
     width: '240px',
     height: '32px',
-    // borderRadius: '8px',
     padding: '4px',
-    // backgroundColor: '#ffffff', // Optional: Add background color
-    // display: 'flex',
-    // alignItems: 'center',
+    display: 'flex',
+    alignItems: 'center',
     gap: '8px',
-    // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Optional: Add shadow
   },
   contactImage: {
     width: '24px',
     height: '24px',
-    // borderRadius: '8px',
-    // objectFit: 'cover', // Ensure the image fits well
+  },
+  contactName: {
+    fontFamily: 'Inter, sans-serif', // Apply Inter font to the contact names
+    fontSize: '12px', // Optional: Adjust font size
+    color: '#333333', // Optional: Adjust text color
   },
 };
 

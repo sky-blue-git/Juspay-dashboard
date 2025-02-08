@@ -6,8 +6,8 @@ import Contacts from './Contacts';
 const RightSidebar = () => {
   return (
     <div>
-      <Activities />
       <Notifications />
+      <Activities />
       <Contacts />
     </div>
   )
