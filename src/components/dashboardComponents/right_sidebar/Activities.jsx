@@ -63,6 +63,9 @@ const styles = {
     backgroundColor: "#1C1C1C33",
     zIndex: 0,
   },
+  ActivitiesText: {
+    fontFamily: 'Inter, sans-serif', // Apply Inter font to the "Contacts" text
+  },
   activityItem: {
     width: "232px",
     height: "46px",
