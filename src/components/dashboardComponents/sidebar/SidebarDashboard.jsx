@@ -12,9 +12,15 @@ const SidebarDashboard = () => {
       <div className="section-title">Dashboards</div>
       <ul className="menu">
         <li className="active">Default</li>
-        <li><FaShoppingCart /> eCommerce</li>
-        <li><FaFolder /> Projects</li>
-        <li><FaBookOpen /> Online Courses</li>
+        <li>
+          <FaShoppingCart /> eCommerce
+        </li>
+        <li>
+          <FaFolder /> Projects
+        </li>
+        <li>
+          <FaBookOpen /> Online Courses
+        </li>
       </ul>
     </div>
   );
