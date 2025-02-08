@@ -47,6 +47,7 @@
   font-weight: bold;
 }
 
+/* General menu styles (used by both sections) */
 .menu {
   list-style: none;
   padding: 0;
@@ -68,13 +69,32 @@
   display: block;
 }
 
-.menu-item {
+/* ---------- Dashboard Section Styles Only ---------- */
+.dashboard-menu .menu-item {
   display: flex;
   align-items: center;
-  gap: 4px; /* Reduce gap between arrow and text */
-  padding-left: 10px;
+  gap: 2px;
+  padding: 4px 6px;
 }
 
+.dashboard-menu .arrow {
+  font-size: 12px;
+  color: gray;
+}
+
+.dashboard-menu .arrow-placeholder {
+  display: inline-block;
+  width: 12px; /* Matches the width of the real arrow icon */
+}
+
+/* Reduce the right margin of SVG elements within dashboard items */
+.dashboard-menu li > svg {
+  margin-right: 4px;
+}
+
+/* ---------- End Dashboard Section Styles ---------- */
+
+/* Styles for Pages section remain unchanged */
 .menu-item-content {
   display: flex;
   align-items: center;
@@ -91,10 +111,36 @@
   color: var(--sidebar-hover);
 }
 
+/* Active item (Default) styling */
 .active {
   background: var(--sidebar-active);
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
+}
+
+/* Increase left padding for active default item so content is pushed further right */
+.dashboard-menu li.active {
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Vertical line on the left for the active item with rounded corners on both sides */
+.dashboard-menu li.active::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 5px;
+  bottom: 5px;
+  width: 4px;
+  background: var(--sidebar-hover);
+  border-radius: 10px; /* Rounded corners on both left and right sides */
+}
+
+/* Active content container */
+.active-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .submenu {
@@ -113,13 +159,4 @@
 
 .submenu li:hover {
   color: var(--sidebar-hover);
-}
-
-.menu li > svg {
-  margin-right: 8px;
-}
-
-.small-arrow {
-  font-size: 0.8em;
-  color: gray;
 }

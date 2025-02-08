@@ -20,7 +20,7 @@ const ProjectionsVsActualsChart = () => {
   return (
     <Paper style={{ 
       padding: '20px', 
-      backgroundColor: "#F7F9FB",
+      backgroundColor: "var(--primary-light)",
       width: "432px", 
       minWidth: "400px",
       height: "252px",

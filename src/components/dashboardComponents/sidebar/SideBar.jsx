@@ -32,30 +32,34 @@ const SideBar = () => {
 
       <Favourites />
 
-      {/* Dashboards */}
       <div className="section-title">Dashboards</div>
-      <ul className="menu">
+      <ul className="menu dashboard-menu">
         <li className="active">
-          <FaTachometerAlt /> Default
+          <div className="active-content">
+            <span className="arrow-placeholder"></span>
+            <FaTachometerAlt />
+            <span>Default</span>
+          </div>
         </li>
-        <li className="menu-item">
-          <FaChevronRight className="small-arrow" />
-          <FaShoppingCart /> eCommerce
+        <li>
+          <FaChevronRight className="arrow" />
+          <FaShoppingCart />
+          <span>eCommerce</span>
         </li>
-        <li className="menu-item">
-          <FaChevronRight className="small-arrow" />
-          <FaFolder /> Projects
+        <li>
+          <FaChevronRight className="arrow" />
+          <FaFolder />
+          <span>Projects</span>
         </li>
-        <li className="menu-item">
-          <FaChevronRight className="small-arrow" />
-          <FaBookOpen /> Online Courses
+        <li>
+          <FaChevronRight className="arrow" />
+          <FaBookOpen />
+          <span>Online Courses</span>
         </li>
       </ul>
 
-      {/* Pages */}
       <div className="section-title">Pages</div>
       <ul className="menu">
-        {/* User Profile with toggleable submenu */}
         <li className="has-submenu">
           <div
             className="menu-item-content"
@@ -66,7 +70,8 @@ const SideBar = () => {
             ) : (
               <FaChevronRight className="arrow" />
             )}
-            <FaUser /> <span>User Profile</span>
+            <FaUser />
+            <span>User Profile</span>
           </div>
           {openSection === "user" && (
             <ul className="submenu">
@@ -79,29 +84,32 @@ const SideBar = () => {
           )}
         </li>
 
-        {/* Other pages with static arrow icons */}
         <li className="has-submenu">
           <div className="menu-item-content">
             <FaChevronRight className="arrow" />
-            <FaFileAlt /> <span>Account</span>
+            <FaFileAlt />
+            <span>Account</span>
           </div>
         </li>
         <li className="has-submenu">
           <div className="menu-item-content">
             <FaChevronRight className="arrow" />
-            <FaUsers /> <span>Corporate</span>
+            <FaUsers />
+            <span>Corporate</span>
           </div>
         </li>
         <li className="has-submenu">
           <div className="menu-item-content">
             <FaChevronRight className="arrow" />
-            <FaBlog /> <span>Blog</span>
+            <FaBlog />
+            <span>Blog</span>
           </div>
         </li>
         <li className="has-submenu">
           <div className="menu-item-content">
             <FaChevronRight className="arrow" />
-            <FaComment /> <span>Social</span>
+            <FaComment />
+            <span>Social</span>
           </div>
         </li>
       </ul>
