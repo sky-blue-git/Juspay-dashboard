@@ -1,42 +1,39 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, IconButton, InputBase } from "@mui/material";
-import { Search, WbSunny, Notifications, ChatBubble, Dashboard } from "@mui/icons-material";
 import "./Header.css";
+import { Search, WbSunny, Notifications, ChatBubble, Dashboard } from "@mui/icons-material";
 
-const Header = () => {
+const Header = ({ toggleTheme }) => {
   return (
-    <AppBar position="static" className="header">
-      <Toolbar className="toolbar">
+    <div className="header">
+      <div className="toolbar">
         {/* Left Side */}
         <div className="left">
-          <IconButton className="icon">
+          <button className="icon">
             <Dashboard fontSize="small" />
-          </IconButton>
-          <Typography variant="body2" className="breadcrumb">
-            Dashboards / Default
-          </Typography>
+          </button>
+          <span className="breadcrumb">Dashboards / Default</span>
         </div>
 
         {/* Center: Search Box */}
         <div className="search-box">
           <Search className="search-icon" />
-          <InputBase placeholder="Search" className="search-input" />
+          <input type="text" placeholder="Search" className="search-input" />
         </div>
 
         {/* Right Side */}
         <div className="right">
-          <IconButton className="icon">
+          <button className="icon" onClick={toggleTheme}>
             <WbSunny fontSize="small" />
-          </IconButton>
-          <IconButton className="icon">
+          </button>
+          <button className="icon">
             <ChatBubble fontSize="small" />
-          </IconButton>
-          <IconButton className="icon">
+          </button>
+          <button className="icon">
             <Notifications fontSize="small" />
-          </IconButton>
+          </button>
         </div>
-      </Toolbar>
-    </AppBar>
+      </div>
+    </div>
   );
 };
 

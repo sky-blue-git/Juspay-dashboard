@@ -1,7 +1,23 @@
+/* Light Mode (Default) */
+:root {
+  --sidebar-bg: white;
+  --sidebar-text: #555;
+  --sidebar-hover: black;
+  --sidebar-active: #f5f5f5;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --sidebar-bg: #1C1C1C;
+  --sidebar-text: white;
+  --sidebar-hover: lightgray;
+  --sidebar-active: #333;
+}
+
 .sidebar {
   width: 250px;
   height: 100vh;
-  background: white;
+  background: var(--sidebar-bg);
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   overflow-y: auto;
@@ -22,6 +38,7 @@
 
 .username {
   font-weight: bold;
+  color: var(--sidebar-text);
 }
 
 .section-title {
@@ -44,16 +61,16 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #555;
+  color: var(--sidebar-text);
   transition: 0.3s;
 }
 
 .menu li:hover {
-  color: black;
+  color: var(--sidebar-hover);
 }
 
 .active {
-  background: #f5f5f5;
+  background: var(--sidebar-active);
   border-radius: 5px;
   font-weight: bold;
 }
@@ -71,5 +88,5 @@
 }
 
 .submenu li:hover {
-  color: black;
+  color: var(--sidebar-hover);
 }

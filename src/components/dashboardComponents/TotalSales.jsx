@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, CardContent } from "@mui/material";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const data = [
@@ -11,30 +10,57 @@ const data = [
 
 const TotalSales = () => {
   return (
-    <Card style={{ width: "220px", background: "#f8f9fa", borderRadius: "12px", padding: "16px", textAlign: "left" }}>
-      <CardContent>
-        <p style={{ fontWeight: 600, marginBottom: "12px", fontSize: "16px" }}>Total Sales</p>
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
-          <PieChart width={120} height={120}>
-            <Pie data={data} cx="50%" cy="50%" innerRadius={35} outerRadius={50} dataKey="value" stroke="none">
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
-              ))}
-            </Pie>
-            <Tooltip />
-          </PieChart>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          {data.map((item, index) => (
-            <div key={index} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-              <span style={{ width: "8px", height: "8px", borderRadius: "50%", marginRight: "8px", backgroundColor: item.color }}></span>
-              <p style={{ flexGrow: 1, fontSize: "14px", color: "#333", margin: 0 }}>{item.name}</p>
-              <p style={{ fontSize: "14px", fontWeight: "bold", margin: 0 }}>${item.value.toFixed(2)}</p>
-            </div>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+    <div
+      style={{
+        width: "202px",
+        height: "344px",
+        marginTop: "28px",
+        background: "#f8f9fa",
+        borderRadius: "12px",
+        padding: "24px",
+      }}
+    >
+      <p style={{ fontWeight: 600, marginBottom: "12px", fontSize: "14px" }}>
+        Total Sales
+      </p>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
+        <PieChart width={120} height={120}>
+          <Pie
+            data={data}
+            cx="50%"
+            cy="50%"
+            innerRadius={35}
+            outerRadius={50}
+            dataKey="value"
+            stroke="#f8f9fa"
+            strokeWidth={6} 
+            cornerRadius={10} 
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {data.map((item, index) => (
+          <div key={index} style={{ display: "flex", alignItems: "center", marginBottom: "16px" }}>
+            <span
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                marginRight: "8px",
+                backgroundColor: item.color,
+              }}
+            ></span>
+            <p style={{ flexGrow: 1, fontSize: "12px" }}>{item.name}</p>
+            <p style={{ fontSize: "12px" }}>${item.value.toFixed(2)}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

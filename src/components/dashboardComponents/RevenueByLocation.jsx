@@ -20,36 +20,44 @@ const RevenueByLocation = () => {
         height: "318px",
         background: "#F7F9FB",
         borderRadius: "12px",
-        padding: "16px",
+        padding: "24px",
         textAlign: "left",
       }}
     >
-      <CardContent>
         <p style={{ fontSize: "14px", fontWeight: 600}}>
           Revenue by Location
         </p>
-        <div style={{ marginBottom: "12px" }}>
+        <div style={{ marginBottom: "16px", marginTop: "16px" }}>
           <img
             src={WorldMap}
             alt="World Map"
-            style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+            style={{ width: "100%"}}
           />
         </div>
         {data.map((item) => (
-          <div key={item.city} style={{ display: "flex", flexDirection: "column", marginBottom: "12px" }}>
-            <p style={{ fontSize: "14px", color: "#333", margin: 0 }}>{item.city}</p>
-            <p style={{ fontSize: "14px", fontWeight: "bold", textAlign: "right", margin: 0 }}>
-              {item.revenue}K
-            </p>
+          <div key={item.city} style={{ display: "flex", flexDirection: "column", marginBottom: "16px" }}>
+            <div style={{display: "flex", flexDirection: "row", justifyContent:"space-between", fontSize: "12px"}}>
+              <p>{item.city}</p>
+              <p>
+                {item.revenue}K
+              </p>
+            </div>
             <LinearProgress
               variant="determinate"
               value={(item.revenue / 100) * 100}
-              style={{ marginTop: "4px", height: "6px", borderRadius: "3px", backgroundColor: "#d0d0d0" }}
+              sx={{
+                marginTop: "6px",
+                height: "2px",
+                borderRadius: "1px",
+                backgroundColor: "#A8C5DA80",
+                "& .MuiLinearProgress-bar": {
+                  backgroundColor: "#A8C5DA",
+                  borderRadius: "1px",
+                },
+              }}
             />
           </div>
         ))}
-
-      </CardContent>
     </div>
   );
 };

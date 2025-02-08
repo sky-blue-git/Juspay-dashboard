@@ -1,0 +1,39 @@
+.favourites-container {
+  padding: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.tab {
+  opacity: 0.2;
+}
+
+.tab.active {
+  opacity: 0.4;
+}
+
+.favourites-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.favourites-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #1C1C1C;
+  opacity: 0.2;
+  border-radius: 50%;
+}

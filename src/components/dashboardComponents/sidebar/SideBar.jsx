@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaUser, FaShoppingCart, FaFolder, FaBookOpen, FaFileAlt, FaUsers, FaBlog, FaComment } from "react-icons/fa";
 import "./SideBar.css"; 
 import Profile from "../../../assets/profile.svg";
+import Favourites from "./Favourites";
 
 const SideBar = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -12,18 +13,12 @@ const SideBar = () => {
 
   return (
     <div className="sidebar">
-      {/* User Section */}
       <div className="user">
-      <img src={Profile} alt="Profile" className="profile-pic" />
+        <img src={Profile} alt="Profile" className="profile-pic" />
         <span className="username">ByeWind</span>
       </div>
 
-      {/* Favorites */}
-      <div className="section-title">Favorites</div>
-      <ul className="menu">
-        <li>• Overview</li>
-        <li>• Projects</li>
-      </ul>
+      <Favourites />
 
       {/* Dashboards */}
       <div className="section-title">Dashboards</div>
