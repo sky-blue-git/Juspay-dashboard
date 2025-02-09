@@ -2,7 +2,7 @@ import React from "react";
 import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const data = [
-  { name: "Direct", value: 300.56, color: "#1C1C1C" },
+  { name: "Direct", value: 300.56, color: "var(--primary-brand)" },
   { name: "Affiliate", value: 135.18, color: "#BAEDBD" },
   { name: "Sponsored", value: 154.02, color: "#95A4FC" },
   { name: "E-mail", value: 48.96, color: "#B1E3FF" },
@@ -13,26 +13,26 @@ const TotalSales = () => {
     <div
       style={{
         width: "202px",
-        height: "344px",
+        height: "336px",
         marginTop: "28px",
-        background: "#f8f9fa",
+        background: "var(--primary-light)",
         borderRadius: "12px",
         padding: "24px",
       }}
     >
-      <p style={{ fontWeight: 600, marginBottom: "12px", fontSize: "14px" }}>
+      <p style={{ fontWeight: 600, marginBottom: "16px", fontSize: "14px" }}>
         Total Sales
       </p>
-      <div style={{ display: "flex", justifyContent: "center", marginBottom: "12px" }}>
+      <div style={{ display: "flex", justifyContent: "center", marginBottom: "16px" }}>
         <PieChart width={120} height={120}>
           <Pie
             data={data}
             cx="50%"
             cy="50%"
-            innerRadius={35}
-            outerRadius={50}
+            innerRadius={40}
+            outerRadius={60}
             dataKey="value"
-            stroke="#f8f9fa"
+            stroke="var(--primary-light)"
             strokeWidth={6} 
             cornerRadius={10} 
           >
@@ -45,7 +45,7 @@ const TotalSales = () => {
       </div>
       <div style={{ display: "flex", flexDirection: "column" }}>
         {data.map((item, index) => (
-          <div key={index} style={{ display: "flex", alignItems: "center", marginBottom: "16px" }}>
+          <div key={index} style={{ display: "flex", alignItems: "center", marginBottom: "20px" }}>
             <span
               style={{
                 width: "8px",

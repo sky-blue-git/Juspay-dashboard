@@ -17,60 +17,24 @@ const Frame = () => {
   ];
 
   return (
-    <div style={styles.frame}>
-      <div style={styles.contactsBox}>
-        <span>Contacts</span>
-      </div>
+    <div style={{ width: '240px', marginTop: '28px'}}>
+      <p style={{fontSize: '14px', fontWeight: '600', padding: '8px 4px', marginBottom:"8px"}}>Contacts</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px'}}>
       {contacts.map((contact, index) => (
-        <div key={index} style={styles.contactBox}>
-          <img src={contact.image} alt={contact.name} style={styles.contactImage} />
-          <span>{contact.name}</span>
+        <div key={index} style={{
+          width: '100%',
+          padding: '4px',
+          gap: '8px',
+          display: 'flex',
+          alignItems: 'center',
+        }}>
+          <img src={contact.image} alt={contact.name} />
+          <p style={{fontSize: "14px"}}>{contact.name}</p>
         </div>
       ))}
+      </div>
     </div>
   );
-};
-
-const styles = {
-  frame: {
-    width: '240px',
-    height: '276px',
-    // display: 'flex',
-    // flexDirection: 'column',
-    gap: '8px',
-    // backgroundColor: '#f0f0f0', // Optional: Add background color
-    padding: '8px',
-    // boxSizing: 'border-box',
-  },
-  contactsBox: {
-    width: '240px',
-    height: '36px',
-    borderRadius: '8px',
-    padding: '8px 4px 8px 4px',
-    backgroundColor: '#ffffff', // Optional: Add background color
-    display: 'flex',
-    alignItems: 'center',
-    fontSize: '14px',
-    fontWeight: 'bold',
-    // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Optional: Add shadow
-  },
-  contactBox: {
-    width: '240px',
-    height: '32px',
-    // borderRadius: '8px',
-    padding: '4px',
-    // backgroundColor: '#ffffff', // Optional: Add background color
-    // display: 'flex',
-    // alignItems: 'center',
-    gap: '8px',
-    // boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)', // Optional: Add shadow
-  },
-  contactImage: {
-    width: '24px',
-    height: '24px',
-    // borderRadius: '8px',
-    // objectFit: 'cover', // Ensure the image fits well
-  },
 };
 
 export default Frame;

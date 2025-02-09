@@ -15,83 +15,37 @@ const Activities = () => {
   ];
 
   return (
-    <div style={styles.container}>
-      <p style={styles.header}>Activities</p>
-      <div style={styles.activityList}>
-        <div style={styles.timeline} />
+    <div style={{ width: "240px", marginTop: "28px" }}>
+      <p style={{fontSize: '14px', fontWeight: '600', padding: '8px 4px', marginBottom:"8px"}}>Activities</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px'}}>
         {activities.map((activity, index) => (
-          <div key={index} style={styles.activityItem}>
-            <img src={activity.image} alt="Activity" style={styles.activityIcon} />
+          <div
+            key={index}
+            style={{
+              display: "flex",
+              alignItems: "flex-start",
+              padding: "4px",
+              gap: "8px",
+              width: "100%",
+            }}
+          >
+            <img
+              src={activity.image}
+              alt="Activity"
+            />
             <div>
-              <div style={styles.activityTitle}>{activity.title}</div>
-              <div style={styles.activityTime}>{activity.time}</div>
+              <p style={{ fontSize: '14px', fontWeight: '400', lineHeight: '20px'}}>
+                {activity.title}
+              </p>
+              <p style={{ fontSize: '12px', fontWeight: '400', lineHeight: '18px', color: 'var(--black40)' }}>
+                {activity.time}
+              </p>
             </div>
           </div>
         ))}
+        </div>
       </div>
-    </div>
   );
-};
-
-const styles = {
-  container: {
-    backgroundColor: "#ffffff",
-    borderRadius: "8px",
-    padding: "16px",
-    width: "240px",
-    height: "306px",
-    boxSizing: "border-box",
-  },
-  header: {
-    fontSize: "14px",
-    fontWeight: 600,
-    // margin: 0,
-    // textAlign: "left",
-    color: "#333",
-  },
-  activityList: {
-    overflowY: "auto",
-    position: "relative",
-  },
-  timeline: {
-    content: "''",
-    position: "absolute",
-    left: "14px",
-    top: "40px",
-    width: "1px",
-    height: "176px",
-    backgroundColor: "#1C1C1C33",
-    zIndex: 0,
-  },
-  activityItem: {
-    width: "232px",
-    height: "46px",
-    borderRadius: "8px",
-    padding: "4px",
-    gap: "8px",
-    boxSizing: "border-box",
-    position: "relative",
-    zIndex: 1,
-    display: "flex",
-    alignItems: "center",
-  },
-  activityIcon: {
-    width: "24px",
-    height: "24px",
-    borderRadius: "8px",
-  },
-  activityTitle: {
-    fontSize: "14px",
-    fontWeight: 400,
-    lineHeight: "20px",
-    color: "#1C1C1C",
-  },
-  activityTime: {
-    fontSize: "12px",
-    fontWeight: 400,
-    lineHeight: "18px",
-    color: "#1C1C1C66",
-  },
 };
 
 export default Activities;

@@ -3,7 +3,7 @@
 :root {
   --bg-color: white;
   --black100: #1C1C1C;
-  --black40: #1C1C1C66; /* light text */
+  --black40: rgba(28, 28, 28, 0.4); /* light text */
   --black20: rgba(28, 28, 28, 0.2);
   --header-bg: #f8f9fa;
   --dark-opacity: rgba(28, 28, 28, 0.05);
@@ -13,6 +13,7 @@
   --primary-purple: #E5ECF6;
   --secondary-cyan: #A8C5DA;
   --secondary-cyan2: #A8C5DA80;
+  --primary-brand: #1C1C1C;
 }
 
 /* Dark Mode */
@@ -20,7 +21,7 @@
   --bg-color: #1C1C1C;
   --black100: #FFFFFF;
   --black40: rgba(255, 255, 255, 0.4);
-  --black40: rgba(255, 255, 255, 0.2);
+  --black20: rgba(255, 255, 255, 0.2);
   --header-bg: #292b2c;
   --dark-opacity: rgba(255, 255, 255, 0.1);
   --black10: rgba(255, 255, 255, 0.1);
@@ -29,6 +30,13 @@
   --primary-purple: #E5ECF6;
   --secondary-cyan: #A8C5DA;
   --secondary-cyan2: #A8C5DA80;
+  --primary-brand: #C6C7F8;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--black100);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dashboard-container {

@@ -5,9 +5,9 @@ import Contacts from './Contacts';
 
 const RightSidebar = () => {
   return (
-    <div>
-      <Activities />
+    <div style={{padding: "20px", borderLeft:"1px solid var(--black10)"}}>
       <Notifications />
+      <Activities />
       <Contacts />
     </div>
   )
