@@ -18,7 +18,6 @@ const Dashboard = () => {
     <div className="dashboard-container">
       <Sidebar />
       <div className="main-content">
-        {/* Pass toggleTheme function to Header */}
         <Header toggleTheme={toggleTheme} />
         <Graphs />
       </div>
