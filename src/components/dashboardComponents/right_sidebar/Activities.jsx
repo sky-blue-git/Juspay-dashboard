@@ -47,5 +47,4 @@ const Activities = () => {
       </div>
   );
 };
-
 export default Activities;
