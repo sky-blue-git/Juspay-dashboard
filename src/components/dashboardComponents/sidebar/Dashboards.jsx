@@ -38,7 +38,7 @@ const Dashboards = () => {
                   left: "0px",
                   height: "16px",
                   width: "4px",
-                  backgroundColor: "var(--primary-brand)",
+                  backgroundColor: "var(--primary-brand",
                   borderRadius: "2px",
                 }}
               />
