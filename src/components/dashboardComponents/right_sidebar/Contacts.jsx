@@ -13,61 +13,28 @@ const Frame = () => {
     { name: 'Orlando Diggs', image: image3 },
     { name: 'Andi Lane', image: image4 },
     { name: 'Kate Morrison', image: image5 },
-    { name: 'Koray Okumus', image: image6 },
+    { name: 'Koray Okumus', image: image6 }
   ];
 
   return (
-    <div style={styles.frame}>
-      <div style={styles.contactsBox}>
-        <span style={styles.contactsText}>Contacts</span>
-      </div>
+    <div style={{ width: '240px', marginTop: '28px'}}>
+      <p style={{fontSize: '14px', fontWeight: '600', padding: '8px 4px', marginBottom:"8px"}}>Contacts</p>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px'}}>
       {contacts.map((contact, index) => (
-        <div key={index} style={styles.contactBox}>
-          <img src={contact.image} alt={contact.name} style={styles.contactImage} />
-          <span style={styles.contactName}>{contact.name}</span>
+        <div key={index} style={{
+          width: '100%',
+          padding: '4px',
+          gap: '8px',
+          display: 'flex',
+          alignItems: 'center',
+        }}>
+          <img src={contact.image} alt={contact.name} />
+          <p style={{fontSize: "14px"}}>{contact.name}</p>
         </div>
       ))}
+      </div>
     </div>
   );
-};
-
-const styles = {
-  frame: {
-    width: '240px',
-    height: '276px',
-    gap: '8px',
-    // padding: '8px',
-  },
-  contactsBox: {
-    width: '240px',
-    height: '36px',
-    borderRadius: '8px',
-    padding: '8px 4px 8px 4px',
-    backgroundColor: '#ffffff',
-    display: 'flex',
-    alignItems: 'center',
-    fontSize: '14px',
-  },
-  contactsText: {
-    fontFamily: 'Inter, sans-serif', // Apply Inter font to the "Contacts" text
-  },
-  contactBox: {
-    width: '240px',
-    height: '32px',
-    padding: '4px',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-  },
-  contactImage: {
-    width: '24px',
-    height: '24px',
-  },
-  contactName: {
-    fontFamily: 'Inter, sans-serif', // Apply Inter font to the contact names
-    fontSize: '12px', // Optional: Adjust font size
-    color: '#333333', // Optional: Adjust text color
-  },
 };
 
 export default Frame;

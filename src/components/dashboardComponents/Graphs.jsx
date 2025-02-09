@@ -10,7 +10,6 @@ import OrderTable from '../OrderTable';
 const Graphs = () => {
   return (
     <div style = {{margin: "28px"}}>
-      <OrderTable/>
       <div style = {{display: "flex", flexDirection: "row", gap:"28px"}}>
         <Cards/>
         <ProjectionsVsActualsChart />
@@ -23,6 +22,7 @@ const Graphs = () => {
         <TopSellingProducts />
         <TotalSales />
       </div>
+      <OrderTable/>
     </div>
   )
 }
