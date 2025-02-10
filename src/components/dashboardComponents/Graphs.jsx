@@ -2,7 +2,7 @@ import React from 'react'
 import Cards from './cards/Cards';
 import ProjectionsVsActualsChart from './ProjectionsVsActualsChart';
 import RevenueChart from './RevenueChart';
-import RevenueByLocation from './RevenuebyLocation';
+import RevenueByLocation from './RevenueByLocation';
 import TotalSales from './TotalSales';
 import TopSellingProducts from './TopSellingProducts';
 import OrderTable from './OrderTable';
