@@ -33,7 +33,7 @@ const Pages = () => {
         {pagesItems.map((item, index) => (
           <li key={index} style={{ cursor: "pointer", display: "block" }}>
             <div
-              style={{ display: "flex", alignItems: "center", gap: "4px",  gap: "4px", padding: "4px 0px", paddingRight: "8px" }}
+              style={{ display: "flex", alignItems: "center", gap: "4px", padding: "4px 0px", paddingRight: "8px" }}
               onClick={() => item.submenu && toggleSection(item.label)}
             >
               {item.submenu ? (

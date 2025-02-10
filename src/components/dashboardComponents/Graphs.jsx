@@ -5,11 +5,14 @@ import RevenueChart from './RevenueChart';
 import RevenueByLocation from './RevenuebyLocation';
 import TotalSales from './TotalSales';
 import TopSellingProducts from './TopSellingProducts';
-import OrderTable from '../OrderTable';
+import OrderTable from './OrderTable';
 
 const Graphs = () => {
   return (
     <div style = {{margin: "28px"}}>
+      <div style = {{padding: "4px 8px", margin: "16px 0"}}>
+        <p style = {{ fontSize: "14px", fontWeight: "600", lineHeight: "20px" }}>eCommerce</p>
+      </div>
       <div style = {{display: "flex", flexDirection: "row", gap:"28px"}}>
         <Cards/>
         <ProjectionsVsActualsChart />
@@ -22,7 +25,6 @@ const Graphs = () => {
         <TopSellingProducts />
         <TotalSales />
       </div>
-      <OrderTable/>
     </div>
   )
 }

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  SearchOutlined,
   WbSunnyOutlined,
   HistoryOutlined,
   NotificationsOutlined,
@@ -8,11 +7,9 @@ import {
   DashboardOutlined,
   StarBorderOutlined,
 } from "@mui/icons-material";
-import search2 from "../../assets/search2.svg";
+import CustomSearch from "./CustomSearch"; // Import the CustomSearch component
 
-const Header = ({ toggleTheme, theme }) => {
-  const [selected, setSelected] = useState("Dashboards"); 
-
+const Header = ({ toggleTheme, theme, selected, setSelected }) => {
   return (
     <div
       style={{
@@ -65,39 +62,7 @@ const Header = ({ toggleTheme, theme }) => {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <div 
-            style={{
-              display: "flex",
-              backgroundColor: "var(--dark-opacity)",
-              borderRadius: "8px",
-              padding: "4px 8px",
-              width: "160px",
-            }}
-          >
-            <SearchOutlined style={{ color: "var(--black20)", fontSize: "16px" }} />
-            <input
-              type="text"
-              placeholder="Search"
-              style={{
-                border: "none",
-                outline: "none",
-                fontSize: "14px",
-                background: "none",
-                color: "var(--black20)",
-                marginLeft: "4px",
-                width: "100%",
-              }}
-            />
-            <img 
-              src={search2} 
-              alt="Search" 
-              style={{
-                width: "18px",
-                height: "18px",
-                marginLeft: "auto"
-              }}
-            />
-          </div>
+          <CustomSearch backgroundColor="var(--dark-opacity)" showSearch2={true} />
 
           <button style={{ background: "transparent", border: "none", cursor: "pointer", padding: "5px" }} onClick={toggleTheme}>
             <WbSunnyOutlined fontSize="small" style={{ color: "var(--black100)" }} />

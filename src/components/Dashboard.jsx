@@ -4,9 +4,11 @@ import Header from "./dashboardComponents/Header";
 import "./Dashboard.css";
 import Graphs from "./dashboardComponents/Graphs";
 import RightSidebar from "./dashboardComponents/right_sidebar/RightSidebar";
+import OrderTable from "./dashboardComponents/OrderTable";
 
 const Dashboard = () => {
   const [theme, setTheme] = useState("light");
+  const [selected, setSelected] = useState("Dashboards");
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -15,13 +17,20 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
+    <div
+      className="dashboard-container"
+      style={{
+        gridTemplateColumns:
+          selected === "Default" ? "212px 1fr" : "212px 1fr 280px",
+      }}
+    >
       <Sidebar />
       <div className="main-content">
-        <Header toggleTheme={toggleTheme} />
-        <Graphs />
+        <Header toggleTheme={toggleTheme} theme={theme} selected={selected} setSelected={setSelected} />
+        {selected === "Dashboards" && <Graphs />}
+        {selected === "Default" && <OrderTable />}
       </div>
-      <RightSidebar />
+      {selected !== "Default" && <RightSidebar />}
     </div>
   );
 };

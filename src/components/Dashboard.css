@@ -14,6 +14,7 @@
   --secondary-cyan: #A8C5DA;
   --secondary-cyan2: #A8C5DA80;
   --primary-brand: #1C1C1C;
+  --white40: rgba(255, 255, 255, 0.4);
 }
 
 /* Dark Mode */
@@ -31,6 +32,7 @@
   --secondary-cyan: #A8C5DA;
   --secondary-cyan2: #A8C5DA80;
   --primary-brand: #C6C7F8;
+  --white40: rgba(28, 28, 28, 0.4);
 }
 
 body {
@@ -42,8 +44,8 @@ body {
 .dashboard-container {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--black100);
   display: grid;
-  grid-template-columns: 212px 1fr 280px;
   height: 100vh;
+  transition: grid-template-columns 0.3s ease; 
 }
