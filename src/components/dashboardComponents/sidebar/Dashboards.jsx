@@ -5,19 +5,19 @@ import BookOutlinedIcon from "@mui/icons-material/BookOutlined";
 import { KeyboardArrowRight } from "@mui/icons-material";
 
 const dashboardItems = [
-  { icon: <DashboardOutlinedIcon />, label: "Default", active: true },
-  { icon: <ShoppingCartOutlinedIcon />, label: "eCommerce" },
-  { icon: <FolderOutlinedIcon />, label: "Projects" },
-  { icon: <BookOutlinedIcon />, label: "Online Courses" },
+  { icon: <DashboardOutlinedIcon fontSize="xsmall"/>, label: "Default", active: true },
+  { icon: <ShoppingCartOutlinedIcon fontSize="xsmall" />, label: "eCommerce" },
+  { icon: <FolderOutlinedIcon fontSize="xsmall" />, label: "Projects" },
+  { icon: <BookOutlinedIcon fontSize="xsmall" />, label: "Online Courses" },
 ];
 
 const Dashboards = () => {
   return (
-    <div style={{ height: "180px" }}>
-      <p style={{ fontSize: "14px", color: "var(--black40)", padding: "4px 12px", lineHeight: "20px", marginBottom: "6px" }}>
+    <div style={{ height: "168px", width: "180px" }}>
+      <p style={{ fontSize: "14px", color: "var(--black40)", padding: "4px 12px", lineHeight: "20px", marginBottom: "4px" }}>
         Dashboards
       </p>
-      <ul style={{ padding: 0, margin: 0 }}>
+      <ul>
         {dashboardItems.map((item, index) => (
           <li
             key={index}
@@ -26,9 +26,10 @@ const Dashboards = () => {
               display: "flex",
               alignItems: "center",
               borderRadius: "8px",
-              paddingLeft: item.active ? "28px" : null,
+              paddingLeft: item.active ? "20px" : null,
               background: item.active ? "var(--dark-opacity)" : null,
               position: "relative",
+              marginBottom: "4px",
             }}
           >
             {item.active && (
@@ -44,10 +45,10 @@ const Dashboards = () => {
               />
             )}
 
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", padding: "4px 0px", paddingRight: "8px" }}>
-              {!item.active ? <KeyboardArrowRight sx={{ color: "var(--black20)" }} /> : null}
+            <div style={{ display: "flex", alignItems: "center", padding: "4px 8px" }}>
+              {!item.active ? <KeyboardArrowRight fontSize="small" sx={{ color: "var(--black20)" }} /> : null}
               {item.icon}
-              <span style={{ fontSize: "14px" }}>{item.label}</span>
+              <span style={{ marginLeft:"4px", fontSize: "14px", lineHeight: "20px"}}>{item.label}</span>
             </div>
           </li>
         ))}

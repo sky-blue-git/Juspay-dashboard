@@ -18,13 +18,13 @@ const SearchComponent = () => {
     >
       <div>
         <IconButton>
-          <Add style={{ color: "black" }} />
+          <Add style={{ color: "var(--black100)" }} />
         </IconButton>
         <IconButton>
-          <FilterList style={{ color: "black" }} />
+          <FilterList style={{ color: "var(--black100)" }} />
         </IconButton>
         <IconButton>
-          <SwapVert style={{ color: "black" }} />
+          <SwapVert style={{ color: "var(--black100)" }} />
         </IconButton>
       </div>
       <div style={{borderRadius: "8px", border: "1px solid var(--black10)"}}>

@@ -12,7 +12,9 @@ const TotalSales = () => {
   return (
     <div
       style={{
-        width: "202px",
+        minWidth: "200px",
+        maxWidth: "272px",
+        width: "100%",
         height: "336px",
         marginTop: "28px",
         background: "var(--primary-light)",

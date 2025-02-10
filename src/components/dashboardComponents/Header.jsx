@@ -7,18 +7,14 @@ import {
   DashboardOutlined,
   StarBorderOutlined,
 } from "@mui/icons-material";
-import CustomSearch from "./CustomSearch"; // Import the CustomSearch component
+import CustomSearch from "./CustomSearch"; 
 
 const Header = ({ toggleTheme, theme, selected, setSelected }) => {
   return (
     <div
       style={{
         padding: "20px 28px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         borderBottom: "1px solid var(--black10)",
-        backgroundColor: "var(--background)",
       }}
       data-theme={theme}
     >
@@ -26,12 +22,11 @@ const Header = ({ toggleTheme, theme, selected, setSelected }) => {
         {`
           input::placeholder {
             color: var(--black20);
-            opacity: 1; /* Ensure full opacity */
           }
         `}
       </style>
 
-      <div style={{ display: "flex", width: "100%", maxWidth: "1200px", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ display: "flex", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "12px", fontSize: "14px" }}>
           <button style={{ background: "transparent", border: "none", cursor: "pointer", padding: "5px" }}>
             <DashboardOutlined fontSize="small" style={{ color: "var(--black100)" }} />

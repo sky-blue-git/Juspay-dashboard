@@ -10,11 +10,11 @@ import {
 } from "@mui/icons-material";
 
 const pagesItems = [
-  { icon: <AccountCircleOutlined />, label: "User Profile", submenu: ["Overview", "Projects", "Campaigns", "Documents", "Followers"] },
-  { icon: <DescriptionOutlined />, label: "Account" },
-  { icon: <GroupsOutlined />, label: "Corporate" },
-  { icon: <MenuBookOutlined />, label: "Blog" },
-  { icon: <ChatBubbleOutline />, label: "Social" },
+  { icon: <AccountCircleOutlined fontSize="small" />, label: "User Profile", submenu: ["Overview", "Projects", "Campaigns", "Documents", "Followers"] },
+  { icon: <DescriptionOutlined fontSize="small" />, label: "Account" },
+  { icon: <GroupsOutlined fontSize="small" />, label: "Corporate" },
+  { icon: <MenuBookOutlined fontSize="small" />, label: "Blog" },
+  { icon: <ChatBubbleOutline fontSize="small" />, label: "Social" },
 ];
 
 const Pages = () => {
@@ -26,32 +26,32 @@ const Pages = () => {
 
   return (
     <>
-      <p style={{ fontSize: "14px", color: "var(--black40)", padding: "4px 12px", lineHeight: "20px", marginBottom: "6px" }}>
+      <p style={{ fontSize: "14px", color: "var(--black40)", padding: "4px 12px", lineHeight: "20px", marginBottom: "4px" }}>
         Pages
       </p>
       <ul>
         {pagesItems.map((item, index) => (
-          <li key={index} style={{ cursor: "pointer", display: "block" }}>
+          <li key={index} style={{ cursor: "pointer", display: "block", marginBottom:"4px" }}>
             <div
-              style={{ display: "flex", alignItems: "center", gap: "4px", padding: "4px 0px", paddingRight: "8px" }}
+              style={{ display: "flex", alignItems: "center", padding: "4px 8px"}}
               onClick={() => item.submenu && toggleSection(item.label)}
             >
               {item.submenu ? (
                 openSection === item.label ? (
-                  <KeyboardArrowDown sx={{ color: "var(--black20)" }} />
+                  <KeyboardArrowDown fontSize="small" sx={{ color: "var(--black20)" }} />
                 ) : (
-                  <KeyboardArrowRight sx={{ color: "var(--black20)" }} />
+                  <KeyboardArrowRight fontSize="small" sx={{ color: "var(--black20)" }} />
                 )
               ) : (
-                <KeyboardArrowRight sx={{ color: "var(--black20)" }} />
+                <KeyboardArrowRight fontSize="small" sx={{ color: "var(--black20)" }} />
               )}
               {item.icon}
-              <span style={{ fontSize: "14px" }}>{item.label}</span>
+              <span style={{ marginLeft:"4px", fontSize: "14px" }}>{item.label}</span>
             </div>
             {item.submenu && openSection === item.label && (
-              <ul style={{ listStyle: "none", paddingLeft: "48px" }}>
+              <ul style={{ listStyle: "none", paddingLeft: "46px" }}>
                 {item.submenu.map((subItem, subIndex) => (
-                  <li key={subIndex} style={{ fontSize: "14px", padding: "6px 8px" }}>
+                  <li key={subIndex} style={{ padding: "6px", fontSize: "14px"}}>
                     {subItem}
                   </li>
                 ))}

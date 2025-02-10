@@ -26,7 +26,8 @@ const RevenueChart = () => {
       style={{
         marginTop: "28px",
         height: "318px",
-        width: "662px",
+        minWidth: "662px",
+        width: "100%",
         backgroundColor: "var(--primary-light)",
         borderRadius: "16px",
         padding: "24px",
@@ -82,7 +83,7 @@ const RevenueChart = () => {
             dataKey="thirdLine"
             stroke="var(--black100)"
             strokeWidth={2}
-            strokeDasharray="6 6" // Dashed line
+            strokeDasharray="6 6" 
             dot={false}
           />
         </LineChart>

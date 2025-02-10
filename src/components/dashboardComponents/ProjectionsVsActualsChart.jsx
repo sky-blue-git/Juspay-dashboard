@@ -20,7 +20,8 @@ const ProjectionsVsActualsChart = () => {
     <div style={{ 
       padding: '20px', 
       backgroundColor: "var(--primary-light)",
-      width: "432px", 
+      // width: "432px", 
+      width: "100%",
       minWidth: "400px",
       height: "252px",
       display: "flex",

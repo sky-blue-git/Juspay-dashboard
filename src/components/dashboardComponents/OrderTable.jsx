@@ -8,6 +8,7 @@ import user3 from '../../assets/one.svg';
 import user4 from '../../assets/two.svg';
 import user5 from '../../assets/three.svg';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import './OrderTable.css'; // Import the CSS file
 
 const OrderTable = () => {
   const orders = [
@@ -25,7 +26,7 @@ const OrderTable = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
-  const totalPages = 5; 
+  const totalPages = 5;
 
   const currentOrders = orders.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
@@ -39,60 +40,60 @@ const OrderTable = () => {
 
   const handleCheckboxChange = (orderId) => {
     if (selectedOrders.includes(orderId)) {
-      setSelectedOrders(selectedOrders.filter((id) => id !== orderId)); 
+      setSelectedOrders(selectedOrders.filter((id) => id !== orderId));
     } else {
-      setSelectedOrders([...selectedOrders, orderId]); 
+      setSelectedOrders([...selectedOrders, orderId]);
     }
   };
 
   return (
-    <div style={{ margin: "28px" }}>
-      <div style={{ padding: "4px 8px", margin: "16px 0" }}>
-        <p style={{ fontSize: "14px", fontWeight: "600", lineHeight: "20px" }}>Order List</p>
+    <div className="order-table-container">
+      <div className="order-table-header">
+        <p className="order-table-title">Order List</p>
       </div>
       <SearchComponent />
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '20px' }}>
+      <table className="order-table">
         <thead>
-          <tr style={{ borderBottom: '1px solid var(--black10)', color: "var(--black40)" }}>
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}></th> 
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}>Order ID</th>
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}>User</th>
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}>Project</th>
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}>Address</th>
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}>Date</th>
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}>Status</th>
-            <th style={{ padding: '12px', textAlign: 'left', fontWeight: 'normal' }}></th> 
+          <tr className="order-table-head-row">
+            <th></th>
+            <th>Order ID</th>
+            <th>User</th>
+            <th>Project</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {currentOrders.map((order, index) => {
-            const statusColor = getStatusColor(order.status); 
+            const statusColor = getStatusColor(order.status);
             return (
-              <tr key={index} style={{ borderBottom: '1px solid var(--black10)', color: "var(--black100)" }}>
-                <td style={{ padding: '12px' }}>
+              <tr key={index} className="order-table-row">
+                <td>
                   <input
                     type="checkbox"
-                    checked={selectedOrders.includes(order.id)} 
+                    checked={selectedOrders.includes(order.id)}
                     onChange={() => handleCheckboxChange(order.id)}
                   />
                 </td>
-                <td style={{ padding: '12px' }}>{order.id}</td>
-                <td style={{ padding: '12px', display: 'flex', alignItems: 'center' }}>
-                  <img src={order.image} alt={order.user} style={{ width: '24px', height: '24px', borderRadius: '50%', marginRight: '10px' }} />
+                <td>{order.id}</td>
+                <td className="user-cell">
+                  <img src={order.image} alt={order.user} className="user-image" />
                   {order.user}
                 </td>
-                <td style={{ padding: '12px' }}>{order.project}</td>
-                <td style={{ padding: '12px' }}>{order.address}</td>
-                <td style={{ padding: '12px', display: 'flex', alignItems: 'center' }}>
-                  <CalendarTodayIcon style={{ marginRight: '4px', color: 'var(--black100)', fontSize: '16px' }} /> {/* Calendar icon with size 16 */}
+                <td>{order.project}</td>
+                <td>{order.address}</td>
+                <td className="date-cell">
+                  <CalendarTodayIcon fontSize='xsmall' className="calendar-icon" />
                   {order.date}
                 </td>
-                <td style={{ padding: '12px', color: statusColor}}>
-                  <Dot color={statusColor} /> 
+                <td style={{ color: statusColor }}>
+                  <Dot color={statusColor} />
                   {order.status}
                 </td>
-                <td style={{ padding: '12px' }}>
-                  <MoreHoriz style={{ cursor: 'pointer', color: 'var(--black100)' }} />
+                <td>
+                  <MoreHoriz className="more-icon" />
                 </td>
               </tr>
             );
@@ -100,11 +101,11 @@ const OrderTable = () => {
         </tbody>
       </table>
 
-      <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+      <div className="pagination">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          style={{ marginRight: '8px', cursor: 'pointer', background: 'none', border: 'none', color: 'var(--black100)' }}
+          className="pagination-button"
         >
           <ChevronLeft />
         </button>
@@ -113,15 +114,7 @@ const OrderTable = () => {
           <button
             key={i + 1}
             onClick={() => handlePageChange(i + 1)}
-            style={{
-              margin: '0 4px',
-              padding: '4px 8px',
-              background: currentPage === i + 1 ? 'var(--black10)' : 'none',
-              border: 'none',
-              cursor: 'pointer',
-              borderRadius: '4px',
-              color: 'var(--black100)',
-            }}
+            className={`pagination-button ${currentPage === i + 1 ? 'active' : ''}`}
           >
             {i + 1}
           </button>
@@ -130,7 +123,7 @@ const OrderTable = () => {
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          style={{ marginLeft: '8px', cursor: 'pointer', background: 'none', border: 'none', color: 'var(--black100)' }}
+          className="pagination-button"
         >
           <ChevronRight />
         </button>
@@ -148,11 +141,11 @@ const getStatusColor = (status) => {
     case 'Pending':
       return '#59A8D4';
     case 'Approved':
-      return '#FFC555'; 
+      return '#FFC555';
     case 'Rejected':
-      return 'var(--black40)'; 
+      return 'var(--black40)';
     default:
-      return '#000000'; 
+      return '#000000';
   }
 };
 

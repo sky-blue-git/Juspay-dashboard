@@ -15,6 +15,7 @@ const RevenueByLocation = () => {
       style={{
         marginTop: "28px",
         width: "202px",
+        width: "100%",
         minWidth: "200px",
         maxWidth: "272px",
         height: "318px",
@@ -27,11 +28,10 @@ const RevenueByLocation = () => {
         <p style={{ fontSize: "14px", fontWeight: 600, color:"var(--black100)"}}>
           Revenue by Location
         </p>
-        <div style={{ marginBottom: "16px", marginTop: "16px" }}>
+        <div style={{display: "flex", marginBottom: "16px", marginTop: "16px", justifyContent: "center"}}>
           <img
             src={WorldMap}
             alt="World Map"
-            style={{ width: "100%"}}
           />
         </div>
         {data.map((item) => (

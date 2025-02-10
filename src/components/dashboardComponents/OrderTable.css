@@ -1,0 +1,93 @@
+.order-table-container {
+  margin: 28px;
+}
+
+.order-table-header {
+  padding: 4px 8px;
+  margin: 16px 0;
+}
+
+.order-table-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.order-table-head-row {
+  border-bottom: 1px solid var(--black10);
+  color: var(--black40);
+}
+
+.order-table-head-row th {
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.order-table-row {
+  border-bottom: 1px solid var(--black10);
+  color: var(--black100);
+}
+
+.order-table-row td {
+  padding: 8px 12px;
+}
+
+.user-cell {
+  display: flex;
+  align-items: center;
+}
+
+.user-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.date-cell {
+  display: flex;
+  align-items: center;
+}
+
+.calendar-icon {
+  margin-right: 4px;
+  color: var(--black100);
+}
+
+.more-icon {
+  cursor: pointer;
+  color: var(--black100);
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pagination-button {
+  margin: 0 4px;
+  padding: 4px 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--black100);
+}
+
+.pagination-button.active {
+  background: var(--black10);
+}
+
+.pagination-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
