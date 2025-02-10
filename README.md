@@ -45,19 +45,19 @@ This is a modern React.js dashboard built using Vite and Material-UI (MUI) compo
 
 ### Dashboard Page
 
-![Dashboard Screenshot](./screenshots/Screenshot-2025-02-11-050135.png)
+![Dashboard Screenshot](./screenshots/Dashboard.png)
 
 ### Orders List Page
 
-![Orders Screenshot](./screenshots/Screenshot-2025-02-11-050156.png)
+![Orders Screenshot](./screenshots/Orderlist.png)
 
 ### Additional Screenshot 1
 
-![Additional Screenshot 1](./screenshots/Screenshot-2025-02-11-050233.png)
+![Additional Screenshot 1](./screenshots/Dashboarddark.png)
 
 ### Additional Screenshot 2
 
-![Additional Screenshot 2](./screenshots/Screenshot-2025-02-11-050254.png)
+![Additional Screenshot 2](./screenshots/Orderlistdark.png)
 
 ## Deployment
 
