@@ -11,7 +11,8 @@ const CustomSearch = ({ backgroundColor, showSearch2 }) => {
         borderRadius: "8px",
         padding: "4px 8px",
         width: "160px",
-        height: "28px"
+        height: "28px",
+        alignItems: "center"
       }}
     >
       <SearchOutlined style={{ color: "var(--black20)", fontSize: "16px" }} />
