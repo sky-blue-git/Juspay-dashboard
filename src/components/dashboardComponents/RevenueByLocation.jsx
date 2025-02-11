@@ -24,18 +24,19 @@ const RevenueByLocation = () => {
         textAlign: "left",
       }}
     >
-        <p style={{ fontSize: "14px", fontWeight: 600, color:"var(--black100)"}}>
+        <p style={{ fontSize: "14px", fontWeight: 600, lineHeight: "20px" }}>
           Revenue by Location
         </p>
         <div style={{display: "flex", marginBottom: "16px", marginTop: "16px", justifyContent: "center"}}>
           <img
             src={WorldMap}
             alt="World Map"
+            height="82px"
           />
         </div>
         {data.map((item) => (
           <div key={item.city} style={{ display: "flex", flexDirection: "column", marginBottom: "16px" }}>
-            <div style={{display: "flex", flexDirection: "row", justifyContent:"space-between", fontSize: "12px",  color:"var(--black100)" }}>
+            <div style={{display: "flex", flexDirection: "row", justifyContent:"space-between", fontSize: "12px", height: "20px", lineHeight: "18px",  color:"var(--black100)" }}>
               <p>{item.city}</p>
               <p>
                 {item.revenue}K
@@ -45,7 +46,6 @@ const RevenueByLocation = () => {
               variant="determinate"
               value={(item.revenue / 100) * 100}
               sx={{
-                marginTop: "6px",
                 height: "2px",
                 borderRadius: "1px",
                 backgroundColor: "#A8C5DA80",
