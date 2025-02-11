@@ -14,7 +14,6 @@ const RevenueByLocation = () => {
     <div
       style={{
         marginTop: "28px",
-        width: "202px",
         width: "100%",
         minWidth: "200px",
         maxWidth: "272px",

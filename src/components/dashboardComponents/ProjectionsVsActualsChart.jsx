@@ -32,7 +32,7 @@ const ProjectionsVsActualsChart = () => {
       </p>
       <ResponsiveContainer width="100%">
       <BarChart data={data} margin={{ top: 30, right: 0, left: -18, bottom: 0 }} barSize={20}>
-          <CartesianGrid horizontal={true} vertical={false} stroke="var(--black10)" />
+          <CartesianGrid horizontal={true} vertical={false} stroke="var(--dark-opacity)" />
           <YAxis
             axisLine={false} 
             tickLine={false} 

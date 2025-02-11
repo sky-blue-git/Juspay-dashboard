@@ -24,13 +24,15 @@ const RevenueChart = () => {
   return (
     <div
       style={{
+        padding: "24px",
         marginTop: "28px",
         height: "318px",
         minWidth: "662px",
         width: "100%",
         backgroundColor: "var(--primary-light)",
         borderRadius: "16px",
-        padding: "24px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <div style={{ display: "flex", fontSize: "14px", color: "var(--black100)", gap: "16px" }}>
@@ -39,28 +41,30 @@ const RevenueChart = () => {
         <RevenueLegendItem color="var(--black100)" label="Current Week" amount="58,211" />
         <RevenueLegendItem color="var(--secondary-cyan)" label="Previous Week" amount="68,768" />
       </div>
-      <ResponsiveContainer width="100%" height={250}>
+      <ResponsiveContainer width="100%">
         <LineChart
           data={data}
-          margin={{ top: 20, right: 0, left: -10, bottom: 0 }}
+          margin={{ top: 30, right: 0, left: -20, bottom: 0 }}
         >
           <CartesianGrid 
             horizontal={true} 
             vertical={false} 
-            stroke="var(--black10)" 
+            stroke="var(--dark-opacity)" 
           />
           <XAxis
             dataKey="name"
-            axisLine={{ stroke: 'var(--black10)' }}
-            tick={{ fill: 'var(--black40)', fontSize: 12 }}
+            axisLine={{ stroke: 'var(--black20)' }}
+            tick={{ fill: 'var(--black40)', fontSize: 12, dy:8 }}
+            tickLine={false} 
+            padding={{ left: 48, right: 48 }}
           />
           <YAxis
             domain={[0, 30]}
+            tickCount={4} 
             axisLine={false}
             tickLine={false}
-            tick={{ fill: 'var(--black40)', fontSize: 12 }}
-            tickFormatter={(value) => `${value}M`}
-            ticks={[10, 20, 30]}
+            tick={{ fill: 'var(--black40)', fontSize: 12, dx: -8, dy:-6 }}
+            tickFormatter={(value) => value === 0 ? '0' : `${value}M`} 
           />
 
           <Tooltip />
